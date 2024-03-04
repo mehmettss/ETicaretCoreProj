@@ -1,0 +1,47 @@
+﻿   @using EntityLayer.Concrete
+   @model List<BestSellingProduct>
+
+<section class="bg-light">
+    <div class="container py-5">  
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Çok Satanlar</h1>
+                <p>
+                    Çok Satanlara goz atın,musteri degerlendirmelerini gorun, urunleri kesfedin ve uygun markaları uygun fiyatlara alın.
+                
+                </p>
+            </div>
+        </div>
+        
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                
+            
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                        <a href="#">
+                        <img src="@item.ImageUrl" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <ul class="list-unstyled d-flex justify-content-between">
+                            <li>
+                                    @for (int i = 0; i <item.Rate; i++)
+                                    {
+                                        <i class="text-warning fa fa-star"></i>
+                                    }
+
+                            </li>
+                            <li class="text-muted text-right">@item.Price-TL</li>
+                        </ul>
+                            <a href="#" class="h2 text-decoration-none text-dark">@item.Title</a>
+                        <p class="card-text">
+                            @item.Description
+                        </p>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

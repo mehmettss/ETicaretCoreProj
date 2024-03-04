@@ -1,0 +1,27 @@
+﻿@using EntityLayer.Concrete
+@model List<FeatureCategory>
+
+<section class="container py-5">
+    <div class="row text-center pt-3">
+        <div class="col-lg-6 m-auto">
+            <h1 class="h1">Öne Cıkan Kategoriler</h1>
+            <p>
+                Sizin İcin Seçtiğimiz Kategoriler.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+
+
+        @foreach (var item in Model)
+        {
+
+
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="@item.ImageUrl" class="rounded-circle img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">@item.Name</h5>
+                <p class="text-center"><a href="/shop/@item.Title/" class="btn btn-success">Alısverise Basla</a></p>
+            </div>
+        }
+    </div>
+</section>

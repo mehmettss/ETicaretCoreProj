@@ -1,0 +1,60 @@
+﻿
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+
+@model IPagedList<EntityLayer.Concrete.Product>
+
+
+<div class="col-lg-9">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            
+        
+        <div class="col-md-4">
+            <div class="card mb-4 product-wap rounded-0">
+                <div class="card rounded-0">
+                    <img class="card-img rounded-0 img-fluid" src="@item.ImageUrl1">
+                    <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                        <ul class="list-unstyled">
+                            <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
+                            <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i></a></li>
+                            <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <a href="shop-single.html" class="h3 text-decoration-none">@item.Name</a>
+                    <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                        <li>@item.Size</li>
+            
+                    </ul>
+                    <ul class="list-unstyled d-flex justify-content-center mb-1">
+                            @for (int i = 0; i < item.Rate; i++)
+                            {
+                                <i class="text-warning fa fa-star"></i>
+                            }
+                    </ul>
+                    <p class="text-center mb-0">@item.Price-TL</p>
+                </div>
+            </div>
+        </div>
+        }
+
+
+    </div>
+     @Html.PagedListPager((IPagedList)Model,page=>Url.Action("index",new{page})) 
+@*     <div div="row">
+        <ul class="pagination pagination-lg justify-content-end">
+            <li class="page-item disabled">
+                <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
+            </li>
+        </ul>
+    </div> *@
+</div>

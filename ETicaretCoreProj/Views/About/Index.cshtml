@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+   
+
+
+
+    <section class="bg-success py-5">
+        <div class="container">
+            <div class="row align-items-center py-5">
+                <div class="col-md-8 text-white">
+                    <h1>Hakkımızda</h1>
+                    <p>
+                    Markasının kendi koleksiyonundaki ürünleriyle farklılaşan, dünyanın lider markalarını mağazalarında müşterisiyle buluşturan firmamız günün her anına uygun modelleriyle moda severlerle buluşuyor. Her geçen yıl trendlerden daha fazla ilham alıyor, ürün gamını zenginleştiriyor. Müşteri deneyimini artırmaya yönelik çalışmaları, çalışan istihdamında yarattığı değer ve yenilikçi vizyonuyla Türk moda perakendesinde başarılı yatırımlarını sürdürüyor.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                <img src="~/template/assets/img/about-hero.svg" alt="About Hero">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Close Banner -->
+    <!-- Start Section -->
+@await Component.InvokeAsync("AboutServicesList")
+    <!-- End Section -->
+    <!-- Start Brands -->
+@await Component.InvokeAsync("AboutBrandList")
+    <!--End Brands-->
+
+
+

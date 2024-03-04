@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+@await Html.PartialAsync("/Views/Partial/PartialHead.cshtml")
+
+<body>
+    <!-- Start Top Nav -->
+    @* @await Html.PartialAsync("/Views/Partial/PartialNavbar.cshtml") *@
+    @await Component.InvokeAsync("PartialNavbarLayoutList")
+    @RenderBody()
+    <!-- Start Footer -->
+    @await Html.PartialAsync("/Views/Partial/PartialFooter.cshtml")
+    <!-- End Footer -->
+    @await Html.PartialAsync("/Views/Partial/PartialScript.cshtml")
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+﻿ @using EntityLayer.Concrete
+   @model List<AboutBrands>
+
+<section class="bg-light py-5">
+    <div class="container my-4">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Markalar</h1>
+                <p>
+              Hizmet ve urun sundugumuz bazı magazalar.
+                </p>
+            </div>
+            <div class="col-lg-9 m-auto tempaltemo-carousel">
+                <div class="row d-flex flex-row">
+           
+                    <div class="col">
+                        <div class="carousel slide carousel-multi-item pt-2 pt-md-0" id="templatemo-slide-brand" data-bs-ride="carousel">
+                            <!--Slides-->
+                            <div class="carousel-inner product-links-wap" role="listbox">
+
+                                <!--First slide-->
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        @foreach (var item in Model)
+                                        {
+                                            
+                                        
+                                        <div class="col-3 p-md-5">
+                                            <a href="#"><img class="img-fluid brand-img" src="@item.LogoUrl" alt="Brand Logo"></a>
+                                        </div>
+                                        }
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Slides-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

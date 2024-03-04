@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+@await Component.InvokeAsync("HomePageFeaturePartial")
+@await Component.InvokeAsync("HomePageCategoryList")
+@await Component.InvokeAsync("BestSellingProductList")
+
+<!-- End Featured Product -->
+
